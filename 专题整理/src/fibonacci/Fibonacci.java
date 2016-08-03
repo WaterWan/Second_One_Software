@@ -58,6 +58,8 @@ public class Fibonacci {
 		System.out.println(Fibonacci(num));
 		System.out.println(Fibonacci(num, ret1, ret2));
 		System.out.println(Fibonacci_iteration(num));
+		int temp = 3;
+		System.out.println(Fibonacci(temp-2) - Fibonacci(temp) + 2);
 	}
 	
 }
