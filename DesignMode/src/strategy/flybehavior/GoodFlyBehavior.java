@@ -1,6 +1,6 @@
 package strategy.flybehavior;
 
-public class GoodFlyBehavior implements FlyBehavior {
+public class GoodFlyBehavior implements IFlyBehavior {
 
 	@Override
 	public void fly() {

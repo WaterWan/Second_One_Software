@@ -1,6 +1,6 @@
 package strategy.quackbehavior;
 
-public class GeGeQuackBehavior implements QuackBehavior {
+public class GeGeQuackBehavior implements IQuackBehavior {
 
 	@Override
 	public void quack() {

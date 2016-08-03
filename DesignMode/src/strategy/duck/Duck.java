@@ -1,12 +1,12 @@
 package strategy.duck;
 
-import strategy.flybehavior.FlyBehavior;
-import strategy.quackbehavior.QuackBehavior;
+import strategy.flybehavior.IFlyBehavior;
+import strategy.quackbehavior.IQuackBehavior;
 
 public abstract class Duck {
 
-	FlyBehavior mFlyBehavior;
-	QuackBehavior mQuackBehavior;
+	IFlyBehavior mFlyBehavior;
+	IQuackBehavior mQuackBehavior;
 
 	public Duck() {
 
@@ -22,11 +22,11 @@ public abstract class Duck {
 
 	public abstract void display();
 
-	public void SetQuackBehavoir(QuackBehavior qb) {
+	public void SetQuackBehavoir(IQuackBehavior qb) {
 		mQuackBehavior = qb;
 	}
 
-	public void SetFlyBehavoir(FlyBehavior fb) {
+	public void SetFlyBehavoir(IFlyBehavior fb) {
 		mFlyBehavior = fb;
 	}
 
