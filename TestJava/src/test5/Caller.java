@@ -14,7 +14,10 @@ public class Caller implements Runnable {
 	
 	@Override
 	public void run() {
-		target.call(msg);
+		synchronized (target) {
+			target.call(msg);
+		}
+		
 	}
 
 	
