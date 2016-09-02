@@ -10,7 +10,7 @@ public class JavaFXSkel extends Application {
 	public static void main(String[] args) {
 		System.out.println("Launching JavaFX application.");
 		
-		launch(args);
+		launch();
 	}
 	
 	public void init() {
