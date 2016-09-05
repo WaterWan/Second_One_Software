@@ -1,5 +1,10 @@
 package dataStru_1;
-
+/**
+ * 插入排序
+ * 这是一种跟抓牌差不多的排序算法
+ * @author Water
+ *
+ */
 public class InsertSort {
 	public static int[] data = { 12, 10, 9, 20, 6, 31, 24 };
 
@@ -25,7 +30,7 @@ public class InsertSort {
 			System.out.println();
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		for (int d : data) {
 			System.out.print(d + " ");
@@ -33,5 +38,6 @@ public class InsertSort {
 		System.out.println();
 		InsertSort ss = new InsertSort();
 		ss.insertSort(data);
+		
 	}
 }
