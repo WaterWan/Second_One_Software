@@ -16,7 +16,7 @@ public class FileDemo {
 		int missNumber = 0;
 		for (int i = 1; i < 400; i++) {
 			System.out.println(i);
-			String strUrl = "http://desktop.nju.edu.cn:8080/jiaowu/Data/Photos/16/161220" + myInteger2String(i) + ".JPG";
+			String strUrl = "http://desktop.nju.edu.cn:8080/jiaowu/Data/Photos/16/161230" + myInteger2String(i) + ".JPG";
 			// new一个URL对象
 //			URL url = new URL(strUrl);
 			if (isNetFileAvailable(strUrl)) {
@@ -73,7 +73,7 @@ public class FileDemo {
 				// 得到图片的二进制数据，以二进制封装得到数据，具有通用性
 				byte[] data = readInputStream(netFileInputStream);
 				// new一个文件对象用来保存图片，默认保存当前工程根目录
-				File imageFile = new File("E:\\图片及音频\\计科16", myInteger2String(count) + ".jpg");
+				File imageFile = new File("E:\\图片及音频\\医学16", myInteger2String(count) + ".jpg");
 				// 创建输出流
 				FileOutputStream outStream = new FileOutputStream(imageFile);
 				// 写入数据
