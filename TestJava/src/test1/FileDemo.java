@@ -16,7 +16,7 @@ public class FileDemo {
 		int missNumber = 0;
 		for (int i = 1; i < 400; i++) {
 			System.out.println(i);
-			String strUrl = "http://desktop.nju.edu.cn:8080/jiaowu/Data/Photos/16/161230" + myInteger2String(i) + ".JPG";
+			String strUrl = "http://jwas2.nju.edu.cn:8080/jiaowu/Data/Photos/16/161230" + myInteger2String(i) + ".JPG";
 			// new一个URL对象
 //			URL url = new URL(strUrl);
 			if (isNetFileAvailable(strUrl)) {
