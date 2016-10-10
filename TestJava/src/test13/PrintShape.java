@@ -24,7 +24,7 @@ public class PrintShape {
 	}
 	
 	public static void printRhombus(int num) {
-		if(num % 2 == 1) {
+		if(isOddNumber(num)) {
 			printOddRhombus(num / 2 + 1);
 		}else {
 			printEvenRhombus(num / 2);
@@ -54,6 +54,14 @@ public class PrintShape {
 			printSpace(i - 1);
 			printStars(2 * (num - i) + 1);
 			System.out.println();
+		}
+	}
+	
+	public static boolean isOddNumber(int num) {
+		if(num % 2 == 0) {
+			return false;
+		}else {
+			return true;
 		}
 	}
 	
