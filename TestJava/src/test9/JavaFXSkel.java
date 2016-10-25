@@ -2,6 +2,8 @@ package test9;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -24,8 +26,11 @@ public class JavaFXSkel extends Application {
 		myStage.setTitle("JavaFX Skeleton.");
 
 		FlowPane rootNode = new FlowPane();
-		Scene myScene = new Scene(rootNode, 500, 400);
-
+		Scene myScene = new Scene(rootNode, 1000, 1200);
+		Image image = new Image("http://img3.redocn.com/20140523/Redocn_2014051521304245.jpg");
+		ImageView imageView = new ImageView();
+		imageView.setImage(image);
+		rootNode.getChildren().add(imageView);
 		myStage.setScene(myScene);
 		myStage.show();
 	}
