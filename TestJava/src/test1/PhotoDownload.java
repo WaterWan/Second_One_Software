@@ -43,7 +43,7 @@ public class PhotoDownload {
 //				"161240009",
 //		};
 //		downloadPhotos(newStudents, "E:\\图片及音频\\扬州中学16级");
-		downloadPhotos(generateIds("151220"), "E:\\图片及音频\\计科15");
+		downloadPhotos(generateIds("151120"), "E:\\图片及音频\\物院15");
 	}
 
 	public static void downloadPhotos(String[] ids, String path) throws Exception {
