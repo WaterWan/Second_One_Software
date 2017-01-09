@@ -10,3 +10,14 @@ git push
 git add .
 git commit -m ",,,"
 git push
+git add .
+git commit -m "放弃治疗"
+git push
+git config --global push.default simple
+git push
+git add .
+git commit -m "444"
+git push
+git add .
+git commit -m "5555"
+git push
