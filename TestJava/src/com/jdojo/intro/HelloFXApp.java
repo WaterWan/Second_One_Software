@@ -11,7 +11,7 @@ public class HelloFXApp extends Application {
 		stage.show();
 	}
 	
-//	public static void main(String[] args) {
-//		Application.launch(args);
-//	}
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
 }
