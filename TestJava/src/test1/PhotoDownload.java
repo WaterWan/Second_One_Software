@@ -13,37 +13,23 @@ public class PhotoDownload {
 	public static int count = 1;
 	
 	public static void main(String[] args) throws Exception {
-		String[] newStudents = {
-				"161050030",
-				"161090150",
-				"161099108",
-				"161099127",
-				"161099143",
-				"161099173",
-				"161105003",
-				"161120154",
-				"161150015",
-				"161150019",
-				"161158015",
-				"161160022",
-				"161170005",
-				"161180122",
-				"161180167",
-				"161180210",
-				"161190055",
-				"161200035",
-				"161200064",
-				"161210042",
-				"161220012",
-				"161220072",
-				"161220143",
-				"161220173",
-				"161230019",
-				"161232041",
-				"161240009",
-		};
-		downloadPhotos(newStudents, "E:\\Photos\\yzzx");
-//		downloadPhotos(generateIds("161190"), "E:\\图片及音频\\材料16");
+		String[] grades = {"15"};
+		String[] majors = generateMajors();
+		for(int i = 0; i < grades.length; i++) {
+			for(int j = 0; j < majors.length; j++) {
+				count = 0;
+				downloadPhotos(generateIds(grades[i] + majors[j]), "D:\\photos\\" + grades[i] + majors[j]);
+			}
+		}
+
+	}
+	
+	public static String[] generateMajors() {
+		String[] majors = new String[290];
+		for(int i = 0; i < 290; i++) {
+			majors[i] = String.valueOf(i + 1090);
+		}
+		return majors;
 	}
 
 	public static void downloadPhotos(String[] ids, String path) throws Exception {
@@ -51,7 +37,9 @@ public class PhotoDownload {
 		String grade = ids[0].substring(0, 2);
 		for (int i = 0; i < ids.length; i++) {
 			System.out.println(i);
-			String strURL = "http://jwas2.nju.edu.cn:8080/jiaowu/Data/Photos/" + grade + "/" + ids[i] + ".JPG";
+//			http://desktop.nju.edu.cn:8080/jiaowu/Data/Photos/  大二
+//			http://jw.nju.edu.cn:8080/jiaowu/Data/Photos/   大一
+			String strURL = "http://desktop.nju.edu.cn:8080/jiaowu/Data/Photos/" + grade + "/" + ids[i] + ".JPG";
 			System.out.println(strURL);
 			if (isNetFileAvailable(strURL, path)) {
 				
@@ -110,12 +98,16 @@ public class PhotoDownload {
 			if (null != netFileInputStream) {
 				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 				// 超时响应时间为2秒
-				conn.setConnectTimeout(5 * 1000);
+				conn.setConnectTimeout(2 * 1000);
 				// 通过输入流获取图片数据
 //				InputStream inStream = conn.getInputStream();
 				// 得到图片的二进制数据，以二进制封装得到数据，具有通用性
 				byte[] data = readInputStream(netFileInputStream);
 				// new一个文件对象用来保存图片，默认保存当前工程根目录
+				File file = new File(path);
+				if(!file.isDirectory()) {
+					file.mkdir();
+				}
 				File imageFile = new File(path, myInteger2String(count) + ".jpg");
 				// 创建输出流
 				FileOutputStream outStream = new FileOutputStream(imageFile);
